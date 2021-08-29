@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Coolvetica;
+    src: url(/fonts/coolvetica.woff) format("woff");
+  }
+  @font-face {
+    font-family: GillSans;
+    src: url(/fonts/gillsanslight.woff) format("woff");
+  }
+  h2 {
+    @apply py-2 text-3xl md:text-5xl font-heading tracking-wider;
+  }
+  p {
+    @apply py-2 text-xl;
+  }
+}
