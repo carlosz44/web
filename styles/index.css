@@ -15,6 +15,9 @@
     @apply py-2 text-3xl md:text-5xl font-heading tracking-wider;
   }
   p {
-    @apply py-2 text-xl;
+    @apply py-2 text-xl px-4 sm:px-0;
+  }
+  a {
+    @apply underline;
   }
 }

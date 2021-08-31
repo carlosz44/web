@@ -1,12 +1,29 @@
-// import Image from "next/image";
 import Link from "next/link";
 import Logo from "./icons/logo";
 
 export default function Header() {
+  const sections = [
+    {
+      route: "/xp",
+      icon: "XP",
+    },
+    {
+      route: "/projects",
+      icon: "Projects",
+    },
+    {
+      route: "/about",
+      icon: "About",
+    },
+    {
+      route: "/contact",
+      icon: "Contact",
+    },
+  ];
+
   return (
     <header>
-      <div className="flex flex-wrap items-center justify-between md:container px-4 py-6 mx-auto md:flex-no-wrap md:px-6">
-        {/* TODO: glass header */}
+      <div className="flex flex-wrap items-center justify-between md:container px-4 py-6 mx-auto md:flex-no-wrap sm:px-6">
         <div className="flex items-center">
           <Link href="/">
             <a>
@@ -15,26 +32,13 @@ export default function Header() {
           </Link>
         </div>
         <ul className="flex">
-          <li className="mt-3 md:mt-0 md:ml-6">
-            <Link href="/xp">
-              <a>XP</a>
-            </Link>
-          </li>
-          <li className="mt-3 md:mt-0 md:ml-6">
-            <Link href="/projects">
-              <a>Proyectos</a>
-            </Link>
-          </li>
-          <li className="mt-3 md:mt-0 md:ml-6">
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </li>
-          <li className="mt-3 md:mt-0 md:ml-6">
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </li>
+          {sections.map((e) => (
+            <li className="mt-3 md:mt-0 ml-3 sm:ml-6" key={e.route}>
+              <Link href={e.route}>
+                <a className="no-underline">{e.icon}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </header>

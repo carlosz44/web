@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <title>Carlos Amorós - Full Stack Dev</title>
+        <title>Carlos Amorós - Full Stack Developer</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="Description"

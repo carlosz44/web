@@ -4,21 +4,39 @@ import aboutImage from "../public/images/das-katze-square.jpeg";
 export default function About() {
   return (
     <div className="flex flex-col md:container space-y-6">
-      <h2>Acerca de mi.</h2>
-      <div className="grid grid-cols-2 gap-6 place-content-around">
+      <h2>About me.</h2>
+      <div className="grid grid-cols-2 gap-6">
         <div className="px-4 pb-6 sm:px-0 col-span-2 sm:col-span-1 text-justify">
           <p>
-            Soy un desarrollador full stack con experiencia en distintas áreas:
-            banca, telecomunicaciones y en e-commerce. Actualmente soy parte de{" "}
+            Full stack developer with background in different areas such as:
+            finance, telecommunications and e-commerce. Currently I'm part of{" "}
             <a
               href="https://preauth.io"
               target="_blank"
               rel="noopener noreferrer"
             >
+              {" "}
               Preauth.io
-            </a>
+            </a>{" "}
+            where we are building awesome things.
           </p>
-          {/* TODO: intereses y otras cosas */}
+          <p>
+            From 2016 to 2018 I co-funded and startup and we were part of the
+            2017 Rockstart Acceleration Program in Colombia.
+          </p>
+          <p>
+            Cat person, already mastered the techniques for coding with cats
+            around. In my free time I kill demons in Doom Eternal (add me to{" "}
+            <a
+              href="https://steamcommunity.com/id/carlos__z/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              Steam
+            </a>
+            !).
+          </p>
         </div>
         <div className="col-span-2 sm:col-span-1 place-self-center sm:place-self-end">
           <Image
