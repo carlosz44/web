@@ -14,6 +14,7 @@ export default function About() {
               href="https://preauth.io"
               target="_blank"
               rel="noopener noreferrer"
+              className="underline"
             >
               {" "}
               Preauth.io
@@ -31,6 +32,7 @@ export default function About() {
               href="https://steamcommunity.com/id/carlos__z/"
               target="_blank"
               rel="noopener noreferrer"
+              className="underline"
             >
               {" "}
               Steam

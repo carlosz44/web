@@ -35,7 +35,7 @@ export default function Header() {
           {sections.map((e) => (
             <li className="mt-3 md:mt-0 ml-3 sm:ml-6" key={e.route}>
               <Link href={e.route}>
-                <a className="no-underline">{e.icon}</a>
+                <a>{e.icon}</a>
               </Link>
             </li>
           ))}

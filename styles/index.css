@@ -17,7 +17,4 @@
   p {
     @apply py-2 text-xl px-4 sm:px-0;
   }
-  a {
-    @apply underline;
-  }
 }
