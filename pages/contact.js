@@ -10,7 +10,12 @@ export default function Contact() {
       <p>{contact.mail}</p>
       <p>
         Also we can talk about anything:{" "}
-        <a href={contact.calendly} target="_blank" rel="noopener noreferrer">
+        <a
+          href={contact.calendly}
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           book a meeting
         </a>
       </p>

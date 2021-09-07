@@ -22,12 +22,13 @@ export default function About() {
             where we are building awesome things.
           </p>
           <p>
-            From 2016 to 2018 I co-funded and startup and we were part of the
-            2017 Rockstart Acceleration Program in Colombia.
+            From 2016 to 2018 I co-funded a startup and we were part of the 2017
+            Rockstart Acceleration Program in Colombia.
           </p>
           <p>
             Cat person, already mastered the techniques for coding with cats
-            around. In my free time I kill demons in Doom Eternal (add me to{" "}
+            around. In my free time I like to kill demons in Doom Eternal (add
+            me to{" "}
             <a
               href="https://steamcommunity.com/id/carlos__z/"
               target="_blank"
