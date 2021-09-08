@@ -1,3 +1,4 @@
+import "animate.css";
 import { request } from "../lib/datocms";
 import SkillsBlock from "../components/skillsBlock";
 
@@ -51,13 +52,13 @@ export default function Experience({ front, langs, other }) {
       <h2>Experience & Skills.</h2>
       <p className="pb-6">What I've been doing this years since 2008:</p>
       <div className="grid grid-cols-3 gap-12">
-        <div className="px-4 sm:px-0 pb-6 col-span-3 md:col-span-1">
+        <div className="animate__animated animate__fadeInLeft px-4 sm:px-0 pb-6 col-span-3 md:col-span-1">
           <SkillsBlock skills={front.allSkills} />
         </div>
-        <div className="px-4 sm:px-0 col-span-3 md:col-span-1">
+        <div className="animate__animated animate__fadeInLeft animate__delay-1s	px-4 sm:px-0 col-span-3 md:col-span-1">
           <SkillsBlock skills={langs.allSkills} />
         </div>
-        <div className="px-4 sm:px-0 col-span-3 md:col-span-1">
+        <div className="animate__animated animate__fadeInLeft animate__delay-2s px-4 sm:px-0 col-span-3 md:col-span-1">
           <SkillsBlock skills={other.allSkills} />
         </div>
       </div>

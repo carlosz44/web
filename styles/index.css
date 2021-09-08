@@ -11,6 +11,7 @@
     font-family: GillSans;
     src: url(/fonts/gillsanslight.woff) format("woff");
   }
+  h1,
   h2 {
     @apply py-2 text-3xl md:text-5xl font-heading tracking-wider;
   }

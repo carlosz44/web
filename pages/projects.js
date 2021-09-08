@@ -1,3 +1,4 @@
+import "animate.css";
 import { request } from "../lib/datocms";
 import ProjectsBlock from "../components/projectsBlock";
 
@@ -42,11 +43,11 @@ export default function Projects({ projects, exp }) {
         Some projects I've been lucky to be part of. Also I tend to create
         things when I get bored:
       </p>
-      <div className="grid grid-cols-2 gap-x-40 gap-y-12">
-        <div className="px-4 sm:px-0 pb-6 col-span-2 sm:col-span-1">
+      <div className="overflow-hidden grid grid-cols-2 gap-x-40 gap-y-12">
+        <div className="animate__animated animate__fadeInRight animate__delay-1s px-4 sm:px-0 pb-6 col-span-2 sm:col-span-1">
           <ProjectsBlock projects={projects.allProjects} />
         </div>
-        <div className="px-4 sm:px-0 col-span-2 sm:col-span-1">
+        <div className="animate__animated animate__fadeInRight px-4 sm:px-0 col-span-2 sm:col-span-1">
           <ProjectsBlock projects={exp.allProjects} />
         </div>
       </div>

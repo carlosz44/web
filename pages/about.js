@@ -6,7 +6,7 @@ export default function About() {
     <div className="flex flex-col md:container space-y-6">
       <h2>About me.</h2>
       <div className="grid grid-cols-2 gap-6">
-        <div className="px-4 pb-6 sm:px-0 col-span-2 sm:col-span-1 text-justify">
+        <div className="pb-6 col-span-2 sm:col-span-1 text-justify">
           <p>
             Full stack developer with background in different areas such as:
             finance, telecommunications and e-commerce. Currently I'm part of{" "}
