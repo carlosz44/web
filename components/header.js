@@ -26,7 +26,7 @@ export default function Header() {
       <div className="flex flex-wrap items-center justify-between md:container px-4 py-6 mx-auto md:flex-no-wrap sm:px-6">
         <div className="flex items-center">
           <Link href="/">
-            <a>
+            <a aria-label="Logo">
               <Logo className="w-10" />
             </a>
           </Link>

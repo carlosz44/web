@@ -15,22 +15,42 @@ export default function Footer() {
     <footer>
       <ul className="flex items-center justify-center space-x-4 lg:container px-4 py-6 mx-auto text-sm md:px-6">
         <li>
-          <a href={links.github} target="_blank" rel="noopener noreferrer">
+          <a
+            href={links.github}
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GitHub className="h-7 md:h-8" />
           </a>
         </li>
         <li>
-          <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
+          <a
+            href={links.linkedin}
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LinkedIn className="h-7 md:h-8" />
           </a>
         </li>
         <li>
-          <a href={links.twitter} target="_blank" rel="noopener noreferrer">
+          <a
+            href={links.twitter}
+            aria-label="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Twitter className="h-7 md:h-8" />
           </a>
         </li>
         <li>
-          <a href={links.behance} target="_blank" rel="noopener noreferrer">
+          <a
+            href={links.behance}
+            aria-label="Behance"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Behance className="h-7 md:h-8" />
           </a>
         </li>
