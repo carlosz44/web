@@ -5,11 +5,15 @@
 @layer base {
   @font-face {
     font-family: Coolvetica;
-    src: url(/fonts/coolvetica.woff) format("woff");
+    src: url(/fonts/coolvetica.woff2) format("woff2"),
+      url(/fonts/coolvetica.woff) format("woff");
+    font-display: swap;
   }
   @font-face {
     font-family: GillSans;
-    src: url(/fonts/gillsanslight.woff) format("woff");
+    src: url(/fonts/gillsanslight.woff2) format("woff2"),
+      url(/fonts/gillsanslight.woff) format("woff");
+    font-display: swap;
   }
   h1,
   h2 {
