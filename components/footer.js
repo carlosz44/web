@@ -7,7 +7,7 @@ export default function Footer() {
   const links = {
     github: "https://github.com/carlosz44",
     linkedin: "https://www.linkedin.com/in/carlos-amoros/",
-    twitter: "https://twitter.com/Leo_Fellini",
+    twitter: "https://twitter.com/carlos__z",
     behance: "https://www.behance.net/carlos__z",
   };
 
@@ -15,7 +15,7 @@ export default function Footer() {
     <footer>
       <ul className="flex items-center justify-center space-x-4 lg:container px-4 py-6 mx-auto text-sm md:px-6">
         <li>
-          <a href={links.GitHub} target="_blank" rel="noopener noreferrer">
+          <a href={links.github} target="_blank" rel="noopener noreferrer">
             <GitHub className="h-7 md:h-8" />
           </a>
         </li>
