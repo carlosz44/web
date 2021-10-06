@@ -9,7 +9,7 @@ export default function SkillCard({ item }) {
     exp < 1 ? `${months} months` : `${years} year${years > 1 ? "s" : ""}`;
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 items-center py-6">
       <p className="col-span-2 tracking-wide">{item.title}</p>
       <p className="col-span-1 tracking-wide text-right">{formatted}</p>
     </div>
