@@ -45,6 +45,7 @@ export default function About() {
           <Image
             src={aboutImage}
             alt="Picture of the author"
+            placeholder="blur"
             width={500}
             height={500}
           />
