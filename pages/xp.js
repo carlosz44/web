@@ -50,7 +50,7 @@ export default function Experience({ front, langs, other }) {
   return (
     <div className="flex flex-col md:container space-y-6 w-full">
       <h2>Experience & Skills.</h2>
-      <p className="pb-6">What I've been doing this years since 2008:</p>
+      <p className="pb-6">What I've been doing this years since 2018:</p>
       <div className="grid grid-cols-3 gap-12">
         <div className="animate__animated animate__fadeInLeft px-4 sm:px-0 pb-6 col-span-3 md:col-span-1">
           <SkillsBlock skills={front.allSkills} />
