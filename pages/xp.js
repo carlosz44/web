@@ -1,6 +1,6 @@
 import "animate.css";
-import { request } from "../lib/datocms";
-import SkillsBlock from "../components/skillsBlock";
+import { request } from "@/lib/datocms";
+import SkillsBlock from "@components/skillsBlock";
 
 const FRONT_QUERY = `query front {
   allSkills(filter: {skilltype: {eq: "front"}}) {

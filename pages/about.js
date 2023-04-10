@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImage from "../public/images/das-katze-square.jpeg";
+import aboutImage from "@public/images/das-katze-square.jpeg";
 
 export default function About() {
   return (
@@ -8,45 +8,16 @@ export default function About() {
       <div className="grid grid-cols-2 gap-6">
         <div className="pb-6 col-span-2 sm:col-span-1 text-justify">
           <p>
-            Full stack developer with background in areas such as: finance,
-            telecommunications and e-commerce. Currently I'm part of{" "}
-            <a
-              href="https://preauth.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              {" "}
-              Preauth.io
-            </a>{" "}
-            where we are building awesome things.
+            Full stack developer with background in areas such as: fintech,
+            e-commerce and startups.
           </p>
           <p>
-            From 2016 to 2018 I co-funded a startup and we were part of the 2017{" "}
-            <a
-              href="https://www.rockstartlatam.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Rockstart Acceleration Program
-            </a>{" "}
-            in Colombia.
+            From 2016 to 2018 I co-funded a startup and we were part of the 2017
+            Rockstart Acceleration Program in Colombia.
           </p>
           <p>
             Cat person, already mastered the techniques for coding with cats
-            around. In my free time I like to kill demons in Doom Eternal (add
-            me @{" "}
-            <a
-              href="https://steamcommunity.com/id/carlos__z/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              {" "}
-              Steam
-            </a>
-            !).
+            around. At weekends I become a Zandalari Troll in Word of Warcraft.
           </p>
         </div>
         <div className="col-span-2 sm:col-span-1 place-self-center sm:place-self-end">
