@@ -25,18 +25,14 @@ export default function Header() {
     <header>
       <div className="flex flex-wrap items-center justify-between md:container px-4 py-6 mx-auto md:flex-no-wrap sm:px-6">
         <div className="flex items-center">
-          <Link href="/">
-            <a aria-label="Logo">
-              <Logo className="w-10" />
-            </a>
+          <Link href="/" aria-label="Logo">
+            <Logo className="w-10" />
           </Link>
         </div>
         <ul className="flex">
           {sections.map((e) => (
             <li className="mt-3 md:mt-0 ml-3 sm:ml-6" key={e.route}>
-              <Link href={e.route}>
-                <a>{e.icon}</a>
-              </Link>
+              <Link href={e.route}>{e.icon}</Link>
             </li>
           ))}
         </ul>

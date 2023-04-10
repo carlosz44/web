@@ -1,6 +1,6 @@
 import "animate.css";
-import { request } from "../lib/datocms";
-import ProjectsBlock from "../components/projectsBlock";
+import { request } from "@/lib/datocms";
+import ProjectsBlock from "@components/projectsBlock";
 
 const PROJECTS_QUERY = `query projects {
   allProjects(filter: {projecttype: {eq: "project"}}) {

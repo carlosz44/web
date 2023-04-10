@@ -1,22 +1,21 @@
+/** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     colors: {
-      gray: colors.warmGray,
+      gray: colors.stone,
       purple: colors.violet,
       green: colors.emerald,
     },
-    extend: {},
     fontFamily: {
       sans: "GillSans",
       heading: ["Coolvetica", "sans-serif"],
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
