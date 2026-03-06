@@ -1,25 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "GillSans";
+  --font-heading: "Coolvetica", sans-serif;
+}
 
 @layer base {
   @font-face {
     font-family: Coolvetica;
-    src: url(/fonts/coolvetica.woff2) format("woff2"),
+    src:
+      url(/fonts/coolvetica.woff2) format("woff2"),
       url(/fonts/coolvetica.woff) format("woff");
     font-display: swap;
   }
   @font-face {
     font-family: GillSans;
-    src: url(/fonts/gillsanslight.woff2) format("woff2"),
+    src:
+      url(/fonts/gillsanslight.woff2) format("woff2"),
       url(/fonts/gillsanslight.woff) format("woff");
     font-display: swap;
   }
   h1,
   h2 {
-    @apply py-2 text-3xl md:text-5xl font-heading tracking-wider;
+    @apply font-heading py-2 text-3xl tracking-wider md:text-5xl;
   }
   p {
-    @apply py-2 text-xl px-4 sm:px-0;
+    @apply px-4 py-2 text-xl sm:px-0;
   }
 }

@@ -1,6 +1,6 @@
-export default function Index() {
+export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full space-y-12">
+    <div className="flex w-full flex-col items-center justify-center space-y-12">
       <h1 className="md:text-5xl">Carlos Amorós</h1>
       <p className="text-2xl md:text-4xl">Full stack Developer</p>
     </div>

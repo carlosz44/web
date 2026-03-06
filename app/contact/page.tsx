@@ -5,8 +5,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col md:container space-y-6">
-      <h2>Let's get in contact.</h2>
+    <div className="flex flex-col space-y-6 md:container">
+      <h2>Let{"'"}s get in contact.</h2>
       <p>{contact.mail}</p>
       <p>
         Also we can talk about anything:{" "}

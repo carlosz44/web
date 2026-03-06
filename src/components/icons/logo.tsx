@@ -1,6 +1,6 @@
-import * as React from "react";
+import type { SVGProps } from "react";
 
-function SvgComponent(props) {
+export default function Logo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 32 32" fill="#FAFAF9" {...props}>
       <text
@@ -28,5 +28,3 @@ function SvgComponent(props) {
     </svg>
   );
 }
-
-export default SvgComponent;
