@@ -13,22 +13,22 @@ export default function WorkCard({ item }: { item: WorkExperience }) {
         <div className="flex flex-col p-4 sm:px-6">
           <div className="mb-3 w-full border-b border-violet-400 pb-3">
             <h3 className="text-xl font-semibold">{item.role}</h3>
-            <p className="px-0 text-base text-stone-400">
+            <div className="text-base text-stone-400">
               {item.company} · {item.location}
-            </p>
-            <p className="px-0 text-sm text-stone-500">
+            </div>
+            <div className="text-sm text-stone-500">
               {formatDate(item.start)} –{" "}
               {item.end ? formatDate(item.end) : "Present"}
-            </p>
+            </div>
           </div>
           <div className="mb-1">
-            <p className="mb-2 px-0 text-justify tracking-wide">
+            <div className="mb-2 text-xl text-justify tracking-wide">
               {item.description}
-            </p>
+            </div>
             {item.techStack && (
-              <p className="px-0 text-sm text-emerald-400">
+              <div className="text-sm text-emerald-400">
                 {item.techStack}
-              </p>
+              </div>
             )}
           </div>
         </div>

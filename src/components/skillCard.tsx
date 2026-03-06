@@ -6,8 +6,8 @@ export default function SkillCard({ item }: { item: Skill }) {
 
   return (
     <div className="grid grid-cols-3 items-center py-6">
-      <p className="col-span-2 tracking-wide">{item.title}</p>
-      <p className="col-span-1 text-right tracking-wide">{formatted}</p>
+      <div className="col-span-2 text-xl tracking-wide">{item.title}</div>
+      <div className="col-span-1 text-right text-xl tracking-wide">{formatted}</div>
     </div>
   );
 }

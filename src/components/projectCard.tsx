@@ -10,9 +10,9 @@ export default function Card({ item }: { item: Project }) {
             <h3 className="text-xl font-semibold">{item.title}</h3>
           </div>
           <div className="mb-1">
-            <p className="mb-4 px-0 text-justify tracking-wide">
+            <div className="mb-4 text-xl text-justify tracking-wide">
               {item.description}
-            </p>
+            </div>
             <div className="flex flex-row-reverse items-center justify-between">
               <div className="relative mb-1 flex justify-end text-base leading-6 font-medium">
                 <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 transform rounded-md border-2 border-emerald-400 bg-linear-to-r from-violet-400 to-emerald-400 shadow-lg"></div>

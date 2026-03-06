@@ -15,11 +15,11 @@ export default async function Projects() {
         Some projects I{"'"}ve been lucky to be part of. Also I tend to create
         things when I get bored:
       </p>
-      <div className="grid grid-cols-2 gap-x-40 gap-y-12 overflow-hidden">
-        <div className="animate__animated animate__fadeInRight animate__delay-1s col-span-2 px-4 pb-6 sm:col-span-1 sm:px-0">
+      <div className="grid grid-cols-2 gap-x-40 gap-y-6 overflow-hidden lg:gap-y-12">
+        <div className="animate__animated animate__fadeInRight animate__delay-1s col-span-2 px-4 sm:px-0 lg:col-span-1">
           <ProjectsBlock projects={projects} />
         </div>
-        <div className="animate__animated animate__fadeInRight col-span-2 px-4 sm:col-span-1 sm:px-0">
+        <div className="animate__animated animate__fadeInRight col-span-2 px-4 sm:px-0 lg:col-span-1">
           <ProjectsBlock projects={experiments} />
         </div>
       </div>
