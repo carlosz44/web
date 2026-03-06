@@ -1,21 +1,23 @@
 import { request } from "./datocms";
-import type { Project, Skill } from "@/types";
+import type { Project, Skill, WorkExperience } from "@/types";
 
 const PROJECTS_QUERY = `query projects {
-  allProjects(filter: {projecttype: {eq: "project"}}) {
+  allProjects(filter: {projecttype: {eq: "project"}}, orderBy: year_DESC) {
     id
     title
     description
     link
+    year
   }
 }`;
 
 const EXPERIMENTS_QUERY = `query experiments {
-  allProjects(filter: {projecttype: {eq: "exp"}}) {
+  allProjects(filter: {projecttype: {eq: "exp"}}, orderBy: year_DESC) {
     id
     title
     description
     link
+    year
   }
 }`;
 
@@ -79,4 +81,24 @@ export async function getOtherSkills() {
     query: OTHER_SKILLS_QUERY,
   });
   return data.allSkills;
+}
+
+const WORK_EXPERIENCE_QUERY = `query work {
+  allWorkExperiences(orderBy: start_DESC) {
+    id
+    company
+    role
+    description
+    start
+    end
+    location
+    techStack
+  }
+}`;
+
+export async function getWorkExperience() {
+  const data = await request<{ allWorkExperiences: WorkExperience[] }>({
+    query: WORK_EXPERIENCE_QUERY,
+  });
+  return data.allWorkExperiences;
 }

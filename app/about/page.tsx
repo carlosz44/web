@@ -8,16 +8,20 @@ export default function About() {
       <div className="grid grid-cols-2 gap-6">
         <div className="col-span-2 pb-6 text-justify sm:col-span-1">
           <p>
-            Full stack developer with background in areas such as: fintech,
-            e-commerce and startups.
+            Software engineer with 8 years of experience, specializing in
+            full-stack development with JavaScript, TypeScript, Node.js, and
+            PHP. Currently focused on AI integration — building intelligent
+            chatbots and agent-based systems using LangChain, LangGraph, and
+            LLM APIs.
           </p>
           <p>
-            From 2016 to 2018 I co-funded a startup and we were part of the 2017
-            Rockstart Acceleration Program in Colombia.
+            Experienced across e-commerce, fintech, streaming services, and the
+            startup ecosystem. In 2017, co-founded a startup selected for the
+            first Rockstart Latin America acceleration program.
           </p>
           <p>
             Cat person, already mastered the techniques for coding with cats
-            around. At weekends I become a Zandalari Troll in Word of Warcraft.
+            around. At weekends I become a Zandalari Troll in World of Warcraft.
           </p>
         </div>
         <div className="col-span-2 place-self-center sm:col-span-1 sm:place-self-end">

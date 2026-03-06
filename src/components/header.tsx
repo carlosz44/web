@@ -2,7 +2,8 @@ import Link from "next/link";
 import Logo from "./icons/logo";
 
 const sections = [
-  { route: "/xp", icon: "XP" },
+  { route: "/work", icon: "Work" },
+  { route: "/xp", icon: "Skills" },
   { route: "/projects", icon: "Projects" },
   { route: "/about", icon: "About" },
   { route: "/contact", icon: "Contact" },
