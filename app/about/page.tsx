@@ -3,10 +3,10 @@ import aboutImage from "@public/images/das-katze-square.jpeg";
 
 export default function About() {
   return (
-    <div className="flex flex-col md:container space-y-6">
+    <div className="flex flex-col space-y-6 md:container">
       <h2>About me.</h2>
       <div className="grid grid-cols-2 gap-6">
-        <div className="pb-6 col-span-2 sm:col-span-1 text-justify">
+        <div className="col-span-2 pb-6 text-justify sm:col-span-1">
           <p>
             Full stack developer with background in areas such as: fintech,
             e-commerce and startups.
@@ -20,7 +20,7 @@ export default function About() {
             around. At weekends I become a Zandalari Troll in Word of Warcraft.
           </p>
         </div>
-        <div className="col-span-2 sm:col-span-1 place-self-center sm:place-self-end">
+        <div className="col-span-2 place-self-center sm:col-span-1 sm:place-self-end">
           <Image
             src={aboutImage}
             alt="Picture of the author"

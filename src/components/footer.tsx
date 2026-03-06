@@ -3,17 +3,17 @@ import LinkedIn from "./icons/footer/linkedin";
 import Twitter from "./icons/footer/twitter";
 import Behance from "./icons/footer/behance";
 
-export default function Footer() {
-  const links = {
-    github: "https://github.com/carlosz44",
-    linkedin: "https://www.linkedin.com/in/carlos-amoros/",
-    twitter: "https://twitter.com/carlos__z",
-    behance: "https://www.behance.net/carlos__z",
-  };
+const links = {
+  github: "https://github.com/carlosz44",
+  linkedin: "https://www.linkedin.com/in/carlos-amoros/",
+  twitter: "https://twitter.com/carlos__z",
+  behance: "https://www.behance.net/carlos__z",
+};
 
+export default function Footer() {
   return (
     <footer>
-      <ul className="flex items-center justify-center space-x-4 lg:container px-4 py-6 mx-auto text-sm md:px-6">
+      <ul className="mx-auto flex items-center justify-center space-x-4 px-4 py-6 text-sm md:px-6 lg:container">
         <li>
           <a
             href={links.github}
