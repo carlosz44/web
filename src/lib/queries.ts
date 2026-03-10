@@ -22,7 +22,7 @@ const EXPERIMENTS_QUERY = `query experiments {
 }`;
 
 const FRONT_SKILLS_QUERY = `query front {
-  allSkills(filter: {skilltype: {eq: "front"}}) {
+  allSkills(filter: {skilltype: {eq: "front"}}, orderBy: title_DESC) {
     id
     title
     start
@@ -40,7 +40,7 @@ const LANGS_SKILLS_QUERY = `query langs {
 }`;
 
 const OTHER_SKILLS_QUERY = `query other {
-  allSkills(filter: {skilltype: {eq: "other"}}, orderBy: _createdAt_ASC) {
+  allSkills(filter: {skilltype: {eq: "other"}}, orderBy: title_ASC) {
     id
     title
     start
