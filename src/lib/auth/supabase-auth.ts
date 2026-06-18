@@ -1,13 +1,14 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { config } from "@/lib/config";
 import type { AdminUser, AuthProvider } from "./types";
 
 async function getSupabaseClient() {
   const cookieStore = await cookies();
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!,
+    config.NEXT_PUBLIC_SUPABASE_URL,
+    config.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
@@ -49,9 +50,8 @@ async function getCurrentUser(): Promise<AdminUser | null> {
 
 async function requireAdmin(): Promise<AdminUser> {
   const user = await getCurrentUser();
-  const allowedId = Number(process.env.ALLOWED_GH_ID);
 
-  if (!user || user.githubId !== allowedId) {
+  if (!user || user.githubId !== config.ALLOWED_GH_ID) {
     redirect("/");
   }
 

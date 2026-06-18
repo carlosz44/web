@@ -6,9 +6,9 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col space-y-6 md:container">
-      <h2>Let{"'"}s get in contact.</h2>
-      <p>{contact.mail}</p>
-      <p>
+      <h2 className="animate-fade-up">Let{"'"}s get in contact.</h2>
+      <p className="animate-fade-up [animation-delay:80ms]">{contact.mail}</p>
+      <p className="animate-fade-up [animation-delay:160ms]">
         Also we can talk about anything:{" "}
         <a
           href={contact.calendly}

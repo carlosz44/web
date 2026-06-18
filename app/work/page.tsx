@@ -10,7 +10,7 @@ export default async function Work() {
       <p className="pb-6">
         Places I{"'"}ve worked at and roles I{"'"}ve held throughout my career:
       </p>
-      <div className="animate-fade-in-right px-4 pb-6 sm:px-0">
+      <div className="animate-fade-up px-4 pb-6 sm:px-0">
         <WorkBlock jobs={jobs} />
       </div>
     </div>

@@ -1,11 +1,12 @@
 export function formatExperience(start: string, end: string | null): string {
   const startDate = new Date(start);
   const endDate = end ? new Date(end) : new Date();
-  const exp =
-    (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30 * 12);
-  const years = Math.round(exp * 10) / 10;
-  const months = Math.floor((Math.abs(exp) - Math.floor(exp)) * 12);
+  const months =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    (endDate.getMonth() - startDate.getMonth());
 
-  if (exp < 1) return `${months} months`;
-  return `${years} year${years > 1 ? "s" : ""}`;
+  if (months < 12) return `${months} months`;
+
+  const years = Math.round((months / 12) * 10) / 10;
+  return `${years} year${years === 1 ? "" : "s"}`;
 }

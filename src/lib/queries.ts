@@ -1,60 +1,49 @@
-import { asc, desc, eq } from "drizzle-orm";
+import { asc, desc } from "drizzle-orm";
 import { db } from "./db";
 import { projects, skills, work } from "./db/schema";
 import type { Project, Skill, WorkExperience } from "@/types";
 
-async function getProjectsByType(type: "project" | "exp"): Promise<Project[]> {
-  const rows = await db
-    .select()
-    .from(projects)
-    .where(eq(projects.type, type))
-    .orderBy(desc(projects.year));
+export async function getProjectsGrouped(): Promise<{
+  projects: Project[];
+  experiments: Project[];
+}> {
+  const rows = await db.select().from(projects).orderBy(desc(projects.year));
 
-  return rows.map((row) => ({
+  const mapped = rows.map((row) => ({
     id: row.id,
     title: row.title,
     description: row.description,
     link: row.link ?? "",
     year: row.year ?? 0,
+    type: row.type,
   }));
+
+  return {
+    projects: mapped.filter((p) => p.type === "project"),
+    experiments: mapped.filter((p) => p.type === "exp"),
+  };
 }
 
-export function getProjects() {
-  return getProjectsByType("project");
-}
+export async function getSkillsGrouped(): Promise<{
+  front: Skill[];
+  languages: Skill[];
+  other: Skill[];
+}> {
+  const rows = await db.select().from(skills).orderBy(asc(skills.title));
 
-export function getExperiments() {
-  return getProjectsByType("exp");
-}
-
-async function getSkillsByType(
-  type: "front" | "language" | "other",
-  order: "asc" | "desc",
-): Promise<Skill[]> {
-  const rows = await db
-    .select()
-    .from(skills)
-    .where(eq(skills.type, type))
-    .orderBy(order === "asc" ? asc(skills.title) : desc(skills.title));
-
-  return rows.map((row) => ({
+  const mapped = rows.map((row) => ({
     id: row.id,
     title: row.title,
     start: row.start,
     end: row.end,
+    type: row.type,
   }));
-}
 
-export function getFrontSkills() {
-  return getSkillsByType("front", "desc");
-}
-
-export function getLangSkills() {
-  return getSkillsByType("language", "asc");
-}
-
-export function getOtherSkills() {
-  return getSkillsByType("other", "asc");
+  return {
+    front: mapped.filter((s) => s.type === "front").reverse(),
+    languages: mapped.filter((s) => s.type === "language"),
+    other: mapped.filter((s) => s.type === "other"),
+  };
 }
 
 export async function getWorkExperience(): Promise<WorkExperience[]> {
