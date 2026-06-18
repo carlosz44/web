@@ -1,4 +1,4 @@
-import { supabaseAuth } from "./supabase-auth";
+import { supabaseAuth } from "./supabase/provider";
 import type { AuthProvider } from "./types";
 
 export const auth: AuthProvider = supabaseAuth;

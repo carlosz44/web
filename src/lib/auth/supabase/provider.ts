@@ -1,33 +1,10 @@
-import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { config } from "@/lib/config";
-import type { AdminUser, AuthProvider } from "./types";
-
-async function getSupabaseClient() {
-  const cookieStore = await cookies();
-  return createServerClient(
-    config.NEXT_PUBLIC_SUPABASE_URL,
-    config.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options),
-            );
-          } catch {}
-        },
-      },
-    },
-  );
-}
+import type { AdminUser, AuthProvider } from "../types";
+import { createServerSupabase } from "./server";
 
 async function getCurrentUser(): Promise<AdminUser | null> {
-  const supabase = await getSupabaseClient();
+  const supabase = await createServerSupabase();
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -52,13 +29,26 @@ async function requireAdmin(): Promise<AdminUser> {
   const user = await getCurrentUser();
 
   if (!user || user.githubId !== config.ALLOWED_GH_ID) {
-    redirect("/");
+    redirect("/login");
   }
 
   return user;
 }
 
+async function signOut(): Promise<void> {
+  const supabase = await createServerSupabase();
+  await supabase.auth.signOut();
+}
+
+async function exchangeCode(code: string): Promise<boolean> {
+  const supabase = await createServerSupabase();
+  const { error } = await supabase.auth.exchangeCodeForSession(code);
+  return !error;
+}
+
 export const supabaseAuth: AuthProvider = {
   getCurrentUser,
   requireAdmin,
+  signOut,
+  exchangeCode,
 };

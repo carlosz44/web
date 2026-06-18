@@ -7,4 +7,6 @@ export type AdminUser = {
 export interface AuthProvider {
   getCurrentUser(): Promise<AdminUser | null>;
   requireAdmin(): Promise<AdminUser>;
+  signOut(): Promise<void>;
+  exchangeCode(code: string): Promise<boolean>;
 }
