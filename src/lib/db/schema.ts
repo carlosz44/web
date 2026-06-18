@@ -60,3 +60,7 @@ export const work = pgTable("work", {
     .defaultNow()
     .$onUpdate(() => new Date()),
 });
+
+export type ProjectRow = typeof projects.$inferSelect;
+export type SkillRow = typeof skills.$inferSelect;
+export type WorkRow = typeof work.$inferSelect;

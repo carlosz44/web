@@ -1,6 +1,6 @@
 import type { Project } from "@/types";
-import Card from "./ui/card";
-import OffsetButton from "./ui/offsetButton";
+import Card from "../ui/card";
+import OffsetButton from "../ui/offsetButton";
 
 export default function ProjectCard({ item }: { item: Project }) {
   return (

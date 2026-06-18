@@ -1,5 +1,5 @@
 import { getProjectsGrouped } from "@/lib/queries";
-import ProjectsBlock from "@/components/projectsBlock";
+import ProjectsBlock from "@/components/portfolio/projectsBlock";
 
 export default async function Projects() {
   const { projects, experiments } = await getProjectsGrouped();

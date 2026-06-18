@@ -1,5 +1,5 @@
 import SkillCard from "./skillCard";
-import Card from "./ui/card";
+import Card from "../ui/card";
 import type { Skill } from "@/types";
 
 export default function SkillsBlock({ skills }: { skills: Skill[] }) {

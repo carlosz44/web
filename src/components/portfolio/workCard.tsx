@@ -1,5 +1,5 @@
 import type { WorkExperience } from "@/types";
-import Card from "./ui/card";
+import Card from "../ui/card";
 
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);

@@ -1,5 +1,5 @@
 import { getWorkExperience } from "@/lib/queries";
-import WorkBlock from "@/components/workBlock";
+import WorkBlock from "@/components/portfolio/workBlock";
 
 export default async function Work() {
   const jobs = await getWorkExperience();

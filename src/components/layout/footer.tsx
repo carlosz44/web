@@ -1,7 +1,7 @@
-import GitHub from "./icons/footer/github";
-import LinkedIn from "./icons/footer/linkedin";
-import Twitter from "./icons/footer/twitter";
-import Behance from "./icons/footer/behance";
+import GitHub from "../icons/footer/github";
+import LinkedIn from "../icons/footer/linkedin";
+import Twitter from "../icons/footer/twitter";
+import Behance from "../icons/footer/behance";
 
 const links = {
   github: "https://github.com/carlosz44",

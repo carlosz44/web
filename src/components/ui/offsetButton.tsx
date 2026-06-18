@@ -22,7 +22,7 @@ export default function OffsetButton({
   const cls = `${innerClass} ${className}`;
 
   return (
-    <span className="relative inline-flex text-base leading-6 font-medium">
+    <span className="relative inline-flex w-fit text-base leading-6 font-medium">
       <span className="absolute inset-0 translate-x-1.5 translate-y-1.5 transform rounded-md border-2 border-emerald-400 bg-linear-to-r from-violet-400 to-emerald-400 shadow-lg" />
       {"href" in props && props.href !== undefined ? (
         <a className={cls} {...(props as AnchorProps)}>

@@ -1,5 +1,5 @@
 import { getSkillsGrouped } from "@/lib/queries";
-import SkillsBlock from "@/components/skillsBlock";
+import SkillsBlock from "@/components/portfolio/skillsBlock";
 
 export default async function Experience() {
   const { front, languages, other } = await getSkillsGrouped();
