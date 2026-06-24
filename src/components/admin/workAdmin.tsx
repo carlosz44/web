@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type { WorkRow } from "@/lib/db/schema";
 import type { WorkFormValues } from "@/lib/validation/schemas";
 import { deleteWork } from "@/server/actions/work";
@@ -44,7 +45,10 @@ export default function WorkAdmin({ rows }: { rows: WorkRow[] }) {
   return (
     <div className="flex w-full flex-col space-y-6 md:container">
       <div className="flex items-center justify-between">
-        <h2>Work.</h2>
+        <div className="flex items-center gap-4">
+          <Link href="/admin" className="text-base underline">← Back</Link>
+          <h2>Work.</h2>
+        </div>
         <OffsetButton onClick={() => setEditing(null)}>New</OffsetButton>
       </div>
       <ul className="flex flex-col divide-y divide-stone-700">

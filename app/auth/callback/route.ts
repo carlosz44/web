@@ -4,7 +4,8 @@ import { auth } from "@/lib/auth";
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
-  const next = searchParams.get("next") ?? "/admin";
+  const raw = searchParams.get("next") ?? "/admin";
+  const next = raw.startsWith("/") && !raw.startsWith("//") ? raw : "/admin";
 
   if (code && (await auth.exchangeCode(code))) {
     return NextResponse.redirect(`${origin}${next}`);

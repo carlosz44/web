@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type { ProjectRow } from "@/lib/db/schema";
 import type { ProjectFormValues } from "@/lib/validation/schemas";
 import { deleteProject } from "@/server/actions/projects";
@@ -38,7 +39,10 @@ export default function ProjectsAdmin({ rows }: { rows: ProjectRow[] }) {
   return (
     <div className="flex w-full flex-col space-y-6 md:container">
       <div className="flex items-center justify-between">
-        <h2>Projects.</h2>
+        <div className="flex items-center gap-4">
+          <Link href="/admin" className="text-base underline">← Back</Link>
+          <h2>Projects.</h2>
+        </div>
         <OffsetButton onClick={() => setEditing(null)}>New</OffsetButton>
       </div>
       <ul className="flex flex-col divide-y divide-stone-700">
