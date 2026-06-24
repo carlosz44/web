@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "@/styles/index.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Carlos Amorós - Full Stack Developer",
@@ -18,11 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="flex min-h-dvh flex-col bg-stone-900 text-stone-50">
-          <Header />
-          <main className="container mx-auto flex flex-auto px-4 py-6 md:p-4">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </div>
       </body>
     </html>

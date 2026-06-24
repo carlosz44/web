@@ -1,104 +1,62 @@
-import { request } from "./datocms";
+import { asc, desc } from "drizzle-orm";
+import { db } from "./db";
+import { projects, skills, work } from "./db/schema";
 import type { Project, Skill, WorkExperience } from "@/types";
 
-const PROJECTS_QUERY = `query projects {
-  allProjects(filter: {projecttype: {eq: "project"}}, orderBy: year_DESC) {
-    id
-    title
-    description
-    link
-    year
-  }
-}`;
+export async function getProjectsGrouped(): Promise<{
+  projects: Project[];
+  experiments: Project[];
+}> {
+  const rows = await db.select().from(projects).orderBy(desc(projects.year));
 
-const EXPERIMENTS_QUERY = `query experiments {
-  allProjects(filter: {projecttype: {eq: "exp"}}, orderBy: year_DESC) {
-    id
-    title
-    description
-    link
-    year
-  }
-}`;
+  const mapped = rows.map((row) => ({
+    id: row.id,
+    title: row.title,
+    description: row.description,
+    link: row.link ?? "",
+    year: row.year ?? 0,
+    type: row.type,
+  }));
 
-const FRONT_SKILLS_QUERY = `query front {
-  allSkills(filter: {skilltype: {eq: "front"}}, orderBy: title_DESC) {
-    id
-    title
-    start
-    end
-  }
-}`;
-
-const LANGS_SKILLS_QUERY = `query langs {
-  allSkills(filter: {skilltype: {eq: "language"}}, orderBy: title_ASC) {
-    id
-    title
-    start
-    end
-  }
-}`;
-
-const OTHER_SKILLS_QUERY = `query other {
-  allSkills(filter: {skilltype: {eq: "other"}}, orderBy: title_ASC) {
-    id
-    title
-    start
-    end
-  }
-}`;
-
-export async function getProjects() {
-  const data = await request<{ allProjects: Project[] }>({
-    query: PROJECTS_QUERY,
-  });
-  return data.allProjects;
+  return {
+    projects: mapped.filter((p) => p.type === "project"),
+    experiments: mapped.filter((p) => p.type === "exp"),
+  };
 }
 
-export async function getExperiments() {
-  const data = await request<{ allProjects: Project[] }>({
-    query: EXPERIMENTS_QUERY,
-  });
-  return data.allProjects;
+export async function getSkillsGrouped(): Promise<{
+  front: Skill[];
+  languages: Skill[];
+  other: Skill[];
+}> {
+  const rows = await db.select().from(skills).orderBy(asc(skills.title));
+
+  const mapped = rows.map((row) => ({
+    id: row.id,
+    title: row.title,
+    start: row.start,
+    end: row.end,
+    type: row.type,
+  }));
+
+  return {
+    front: mapped.filter((s) => s.type === "front").reverse(),
+    languages: mapped.filter((s) => s.type === "language"),
+    other: mapped.filter((s) => s.type === "other"),
+  };
 }
 
-export async function getFrontSkills() {
-  const data = await request<{ allSkills: Skill[] }>({
-    query: FRONT_SKILLS_QUERY,
-  });
-  return data.allSkills;
-}
+export async function getWorkExperience(): Promise<WorkExperience[]> {
+  const rows = await db.select().from(work).orderBy(desc(work.start));
 
-export async function getLangSkills() {
-  const data = await request<{ allSkills: Skill[] }>({
-    query: LANGS_SKILLS_QUERY,
-  });
-  return data.allSkills;
-}
-
-export async function getOtherSkills() {
-  const data = await request<{ allSkills: Skill[] }>({
-    query: OTHER_SKILLS_QUERY,
-  });
-  return data.allSkills;
-}
-
-const WORK_EXPERIENCE_QUERY = `query work {
-  allWorkExperiences(orderBy: start_DESC) {
-    id
-    company
-    role
-    description
-    start
-    end
-    location
-    techStack
-  }
-}`;
-
-export async function getWorkExperience() {
-  const data = await request<{ allWorkExperiences: WorkExperience[] }>({
-    query: WORK_EXPERIENCE_QUERY,
-  });
-  return data.allWorkExperiences;
+  return rows.map((row) => ({
+    id: row.id,
+    company: row.company,
+    role: row.role,
+    description: row.description,
+    start: row.start,
+    end: row.end,
+    location: row.location ?? "",
+    techStack: row.techStack ?? "",
+  }));
 }
