@@ -1,5 +1,4 @@
-import { db } from "@/lib/db";
-import { sql } from "drizzle-orm";
+import { publicConfig } from "@/lib/config.public";
 
 export async function GET(request: Request) {
   const auth = request.headers.get("authorization");
@@ -7,6 +6,21 @@ export async function GET(request: Request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  await db.execute(sql`SELECT 1`);
+  const res = await fetch(
+    `${publicConfig.NEXT_PUBLIC_SUPABASE_URL}/auth/v1/health`,
+    {
+      headers: {
+        apikey: publicConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      },
+      cache: "no-store",
+    },
+  );
+
+  if (!res.ok) {
+    return new Response(`supabase ping failed: ${res.status}`, {
+      status: 502,
+    });
+  }
+
   return new Response("ok");
 }
