@@ -18,6 +18,12 @@
   }
 }
 
+@layer components {
+  .link-accent {
+    @apply text-violet-400 underline transition-colors hover:text-emerald-400;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: Coolvetica;

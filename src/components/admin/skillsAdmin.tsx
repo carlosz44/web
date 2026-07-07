@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import type { SkillRow } from "@/lib/db/schema";
 import type { SkillFormValues } from "@/lib/validation/schemas";
 import { deleteSkill } from "@/server/actions/skills";
 import SkillForm from "./skillForm";
 import DeleteButton from "./deleteButton";
 import Modal from "@/components/ui/modal";
-import OffsetButton from "@/components/ui/offsetButton";
+import AdminHeader from "./adminHeader";
 
 export default function SkillsAdmin({ rows }: { rows: SkillRow[] }) {
   const router = useRouter();
@@ -33,13 +32,7 @@ export default function SkillsAdmin({ rows }: { rows: SkillRow[] }) {
 
   return (
     <div className="flex w-full flex-col space-y-6 md:container">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link href="/admin" className="text-base underline">← Back</Link>
-          <h2>Skills.</h2>
-        </div>
-        <OffsetButton onClick={() => setEditing(null)}>New</OffsetButton>
-      </div>
+      <AdminHeader title="Skills." onNew={() => setEditing(null)} />
       <ul className="flex flex-col divide-y divide-stone-700">
         {rows.map((s) => (
           <li key={s.id} className="flex items-center justify-between py-3">

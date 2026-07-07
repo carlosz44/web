@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import type { ProjectRow } from "@/lib/db/schema";
 import type { ProjectFormValues } from "@/lib/validation/schemas";
 import { deleteProject } from "@/server/actions/projects";
 import ProjectForm from "./projectForm";
 import DeleteButton from "./deleteButton";
 import Modal from "@/components/ui/modal";
-import OffsetButton from "@/components/ui/offsetButton";
+import AdminHeader from "./adminHeader";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -38,13 +37,7 @@ export default function ProjectsAdmin({ rows }: { rows: ProjectRow[] }) {
 
   return (
     <div className="flex w-full flex-col space-y-6 md:container">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link href="/admin" className="text-base underline">← Back</Link>
-          <h2>Projects.</h2>
-        </div>
-        <OffsetButton onClick={() => setEditing(null)}>New</OffsetButton>
-      </div>
+      <AdminHeader title="Projects." onNew={() => setEditing(null)} />
       <ul className="flex flex-col divide-y divide-stone-700">
         {rows.map((p) => (
           <li key={p.id} className="flex items-center justify-between py-3">

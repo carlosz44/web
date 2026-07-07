@@ -12,7 +12,7 @@ export default function Contact() {
         Also we can talk about anything:{" "}
         <a
           href={contact.calendly}
-          className="underline"
+          className="link-accent"
           target="_blank"
           rel="noopener noreferrer"
         >
