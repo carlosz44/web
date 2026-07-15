@@ -7,10 +7,11 @@ export async function GET(request: Request) {
   }
 
   const res = await fetch(
-    `${publicConfig.NEXT_PUBLIC_SUPABASE_URL}/auth/v1/health`,
+    `${publicConfig.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/projects?select=id&limit=1`,
     {
       headers: {
         apikey: publicConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${publicConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
       },
       cache: "no-store",
     },
