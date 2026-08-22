@@ -33,7 +33,13 @@ export default function ProjectsAdmin({ rows }: { rows: ProjectRow[] }) {
         year: editing.year ?? CURRENT_YEAR,
         type: editing.type,
       }
-    : { title: "", description: "", link: "", year: CURRENT_YEAR, type: "project" };
+    : {
+        title: "",
+        description: "",
+        link: "",
+        year: CURRENT_YEAR,
+        type: "project",
+      };
 
   return (
     <div className="flex w-full flex-col space-y-6 md:container">

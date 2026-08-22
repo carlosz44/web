@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+build
+.vercel
+
+drizzle
+
+package-lock.json
+next-env.d.ts
+*.tsbuildinfo

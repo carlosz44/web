@@ -34,13 +34,13 @@ Provider-agnostic `AuthProvider` interface with a Supabase implementation (`supa
 
 ## Environment variables
 
-| Variable | Purpose |
-| --- | --- |
-| `DATABASE_URL` | Postgres connection string (Supabase) used by Drizzle and drizzle-kit |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon key |
-| `ALLOWED_GH_ID` | Numeric GitHub user ID allowed into `/admin` |
-| `CRON_SECRET` | Bearer token required by `/api/cron/ping` |
+| Variable                        | Purpose                                                               |
+| ------------------------------- | --------------------------------------------------------------------- |
+| `DATABASE_URL`                  | Postgres connection string (Supabase) used by Drizzle and drizzle-kit |
+| `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL                                                  |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon key                                                     |
+| `ALLOWED_GH_ID`                 | Numeric GitHub user ID allowed into `/admin`                          |
+| `CRON_SECRET`                   | Bearer token required by `/api/cron/ping`                             |
 
 ## Development
 

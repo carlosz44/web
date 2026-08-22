@@ -6,13 +6,13 @@ export default function About() {
     <div className="flex flex-col space-y-6 md:container">
       <h2>About me.</h2>
       <div className="grid grid-cols-2 gap-6">
-        <div className="col-span-2 animate-fade-up pb-6 text-justify lg:col-span-1">
+        <div className="animate-fade-up col-span-2 pb-6 text-justify lg:col-span-1">
           <p>
             Software engineer with 8 years of experience, specializing in
             full-stack development with JavaScript, TypeScript, Node.js, and
             PHP. Currently focused on AI integration — building intelligent
-            chatbots and agent-based systems using LangChain, LangGraph, and
-            LLM APIs.
+            chatbots and agent-based systems using LangChain, LangGraph, and LLM
+            APIs.
           </p>
           <p>
             Experienced across e-commerce, fintech, streaming services, and the
@@ -24,7 +24,7 @@ export default function About() {
             around. At weekends I become a Zandalari Troll in World of Warcraft.
           </p>
         </div>
-        <div className="col-span-2 animate-fade-up place-self-center [animation-delay:80ms] lg:col-span-1 lg:place-self-end">
+        <div className="animate-fade-up col-span-2 place-self-center [animation-delay:80ms] lg:col-span-1 lg:place-self-end">
           <Image
             src={aboutImage}
             alt="Picture of the author"

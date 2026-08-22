@@ -8,7 +8,10 @@ import {
   type ProjectFormValues,
 } from "@/lib/validation/schemas";
 
-export async function saveProject(id: string | null, values: ProjectFormValues) {
+export async function saveProject(
+  id: string | null,
+  values: ProjectFormValues,
+) {
   await auth.requireAdmin();
   const data = projectSchema.parse(values);
   if (id) {
