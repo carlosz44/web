@@ -13,28 +13,55 @@ updates:
           - react-dom
           - "@types/react"
           - "@types/react-dom"
+        update-types:
+          - minor
+          - patch
       next:
         patterns:
           - next
           - eslint-config-next
+        update-types:
+          - minor
+          - patch
       tailwind:
         patterns:
           - tailwindcss
           - "@tailwindcss/*"
           - prettier-plugin-tailwindcss
+        update-types:
+          - minor
+          - patch
       supabase:
         patterns:
           - "@supabase/*"
+        update-types:
+          - minor
+          - patch
       drizzle:
         patterns:
           - drizzle-orm
           - drizzle-kit
           - postgres
+        update-types:
+          - minor
+          - patch
+      production:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
       dev-dependencies:
         dependency-type: development
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: weekly
       day: monday
+    groups:
+      actions:
+        patterns:
+          - "*"
