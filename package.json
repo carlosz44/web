@@ -16,7 +16,7 @@
     "db:seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.4.0",
+    "@hookform/resolvers": "^5.9.1",
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.112.3",
     "drizzle-orm": "^0.45.2",
