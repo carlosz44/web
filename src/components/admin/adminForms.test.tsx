@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 const saveProject = vi.fn();
 const saveSkill = vi.fn();
+const saveWork = vi.fn();
 
 vi.mock("@/server/actions/projects", () => ({
   saveProject: (...args: unknown[]) => saveProject(...args),
@@ -11,15 +12,20 @@ vi.mock("@/server/actions/projects", () => ({
 vi.mock("@/server/actions/skills", () => ({
   saveSkill: (...args: unknown[]) => saveSkill(...args),
 }));
+vi.mock("@/server/actions/work", () => ({
+  saveWork: (...args: unknown[]) => saveWork(...args),
+}));
 
 const { default: ProjectForm } = await import("./projectForm");
 const { default: SkillForm } = await import("./skillForm");
+const { default: WorkForm } = await import("./workForm");
 
 const save = () => screen.getByRole("button", { name: "Save" });
 
 beforeEach(() => {
   saveProject.mockReset();
   saveSkill.mockReset();
+  saveWork.mockReset();
 });
 
 describe("ProjectForm", () => {
@@ -103,6 +109,39 @@ describe("SkillForm", () => {
     expect(saveSkill).toHaveBeenCalledWith(
       null,
       expect.objectContaining({ end: "" }),
+    );
+  });
+});
+
+describe("WorkForm", () => {
+  it("submits with all three optional fields left blank", async () => {
+    const user = userEvent.setup();
+    render(
+      <>
+        <WorkForm
+          id={null}
+          formId="work-form"
+          defaultValues={{
+            company: "Acme",
+            role: "Engineer",
+            description: "Built things",
+            start: "2020-01-01",
+            end: "",
+            location: "",
+            techStack: "",
+          }}
+        />
+        <button type="submit" form="work-form">
+          Save
+        </button>
+      </>,
+    );
+
+    await user.click(save());
+
+    expect(saveWork).toHaveBeenCalledWith(
+      null,
+      expect.objectContaining({ end: "", location: "", techStack: "" }),
     );
   });
 });
