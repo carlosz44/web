@@ -12,7 +12,9 @@ import AdminHeader from "./adminHeader";
 
 export default function SkillsAdmin({ rows }: { rows: SkillRow[] }) {
   const router = useRouter();
-  const [editing, setEditing] = useState<SkillRow | null | undefined>(undefined);
+  const [editing, setEditing] = useState<SkillRow | null | undefined>(
+    undefined,
+  );
 
   const open = editing !== undefined;
   const close = () => setEditing(undefined);
