@@ -1,6 +1,9 @@
 {
   "name": "j-mastropiero-v2",
   "version": "0.8.0",
+  "engines": {
+    "node": "22.x"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
