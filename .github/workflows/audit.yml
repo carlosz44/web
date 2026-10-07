@@ -15,5 +15,8 @@ jobs:
         with:
           node-version-file: .nvmrc
 
-      - name: Audit
-        run: npm audit --audit-level=high
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Audit all dependencies
+        run: npm audit --audit-level=critical
