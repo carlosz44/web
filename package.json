@@ -31,7 +31,7 @@
     "react-dom": "^19.3.0",
     "react-hook-form": "^7.88.0",
     "server-only": "^0.0.1",
-    "zod": "^4.6.4"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
