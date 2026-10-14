@@ -61,6 +61,13 @@ export const work = pgTable("work", {
     .$onUpdate(() => new Date()),
 });
 
+export const keepalive = pgTable("keepalive", {
+  id: integer("id").primaryKey(),
+  pingedAt: timestamp("pinged_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+}).enableRLS();
+
 export type ProjectRow = typeof projects.$inferSelect;
 export type SkillRow = typeof skills.$inferSelect;
 export type WorkRow = typeof work.$inferSelect;

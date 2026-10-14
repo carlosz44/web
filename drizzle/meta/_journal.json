@@ -8,6 +8,13 @@
       "when": 1781670235896,
       "tag": "0000_majestic_monster_badoon",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791941456566,
+      "tag": "0001_vengeful_annihilus",
+      "breakpoints": true
     }
   ]
 }
