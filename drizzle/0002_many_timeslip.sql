@@ -1,0 +1,3 @@
+ALTER TABLE "projects" ENABLE ROW LEVEL SECURITY;--> statement-breakpoint
+ALTER TABLE "skills" ENABLE ROW LEVEL SECURITY;--> statement-breakpoint
+ALTER TABLE "work" ENABLE ROW LEVEL SECURITY;
