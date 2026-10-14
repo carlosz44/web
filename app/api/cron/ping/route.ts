@@ -1,27 +1,21 @@
-import { publicConfig } from "@/lib/config.public";
+import { sql } from "drizzle-orm";
+import { config } from "@/lib/config";
+import { db } from "@/lib/db";
+import { keepalive } from "@/lib/db/schema";
 
 export async function GET(request: Request) {
   const auth = request.headers.get("authorization");
-  if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (!config.CRON_SECRET || auth !== `Bearer ${config.CRON_SECRET}`) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  const res = await fetch(
-    `${publicConfig.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/projects?select=id&limit=1`,
-    {
-      headers: {
-        apikey: publicConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${publicConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-      },
-      cache: "no-store",
-    },
-  );
-
-  if (!res.ok) {
-    return new Response(`supabase ping failed: ${res.status}`, {
-      status: 502,
+  await db
+    .insert(keepalive)
+    .values({ id: 1 })
+    .onConflictDoUpdate({
+      target: keepalive.id,
+      set: { pingedAt: sql`now()` },
     });
-  }
 
   return new Response("ok");
 }
