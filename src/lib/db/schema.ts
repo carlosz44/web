@@ -26,7 +26,7 @@ export const projects = pgTable("projects", {
     .notNull()
     .defaultNow()
     .$onUpdate(() => new Date()),
-});
+}).enableRLS();
 
 export const skills = pgTable("skills", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -41,7 +41,7 @@ export const skills = pgTable("skills", {
     .notNull()
     .defaultNow()
     .$onUpdate(() => new Date()),
-});
+}).enableRLS();
 
 export const work = pgTable("work", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -59,7 +59,7 @@ export const work = pgTable("work", {
     .notNull()
     .defaultNow()
     .$onUpdate(() => new Date()),
-});
+}).enableRLS();
 
 export const keepalive = pgTable("keepalive", {
   id: integer("id").primaryKey(),
